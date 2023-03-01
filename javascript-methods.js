@@ -4,9 +4,9 @@
 
 /*----------------------------------------------------------
 JavaScript Prototype: Method
-Every object in JavaScript has a built-in property called "prototype." 
-The prototype constructor is used to add new methods (functions) and properties to a JavaScript object. 
-- If a method is constructed, then it will be available for the object. 
+Every object in JavaScript has a built-in property called "prototype."
+The prototype constructor is used to add new methods (functions) and properties to a JavaScript object.
+- If a method is constructed, then it will be available for the object.
 - If a property is constructed, then the object will be given the property and its value, as default.
 
 In this Assignment, we use the prototype constructor to add new methods to the Array() object.
@@ -137,23 +137,20 @@ Array.prototype.myLastIndexOf = function(searchElement) {
 
 // KEYS //
 Object.myKeys = function(object) {
-  // Place your code here.
+    // Create an array to store our keys
+    keys = []
+    
+    // Go through all of the keys/properties of the object
+    for (key in object) {
+        // Add each key/property to our keys array
+        keys.push(key)
+    }
+    
+    // Return our array of keys
+    return keys
 };
 
 // VALUES //
 Object.myValues = function(object) {
   // Place your code here.
 };
-
-
-
-
-
-
-array1 = [2, 9, 10, 5, 9];
-map1 = array1.lastIndexOf(9);
-console.log(map1);
-
-array2 = [2, 9, 10, 5, 9];
-map2 = array2.myLastIndexOf(9);
-console.log(map2);
