@@ -1,3 +1,7 @@
+// Nick Melkadze
+// Intro to Web Development
+// Assignment #2: JavaScript Methods
+
 /*----------------------------------------------------------
 JavaScript Prototype: Method
 Every object in JavaScript has a built-in property called "prototype." 
