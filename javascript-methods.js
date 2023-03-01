@@ -105,7 +105,16 @@ Array.prototype.myIncludes = function(searchElement) {
 
 // INDEXOF //
 Array.prototype.myIndexOf = function(searchElement) {
-  // Place your code here.
+    // Loop through the entire array
+    for (let i = 0; i < this.length; i++) {
+        // Once we find the item, stop and return its index
+        if (this[i] == searchElement) {
+            return i
+        }
+    }
+    
+    // If the item was not found, return -1
+    return -1
 };
 
 // LASTINDEXOF //
@@ -122,3 +131,16 @@ Object.myKeys = function(object) {
 Object.myValues = function(object) {
   // Place your code here.
 };
+
+
+
+
+
+
+array1 = [2, 9, 10, 5, 9];
+map1 = array1.indexOf(9);
+console.log(map1);
+
+array2 = [2, 9, 10, 5, 9];
+map2 = array2.myIndexOf(9);
+console.log(map2);
