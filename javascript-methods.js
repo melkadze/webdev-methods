@@ -58,7 +58,16 @@ Array.prototype.mySome = function(callbackFn) {
 
 // EVERY //
 Array.prototype.myEvery = function(callbackFn) {
-  // Place your code here.
+    // Loop through the entire array
+    for (let i = 0; i < this.length; i++) {
+        // Once we find a false item, stop and return false
+        if (!callbackFn(this[i])) {
+            return false
+        }
+    }
+    
+    // If no false items found, return true
+    return true
 };
 
 // REDUCE //
@@ -90,16 +99,3 @@ Object.myKeys = function(object) {
 Object.myValues = function(object) {
   // Place your code here.
 };
-
-
-function filt(value) {
-    return value >=10
-}
-
-array1 = [1, 4, 10, 5, 9];
-map1 = array1.some(filt);
-console.log(map1);
-
-array2 = [1, 4, 10, 5, 9];
-map2 = array2.mySome(filt);
-console.log(map2);
