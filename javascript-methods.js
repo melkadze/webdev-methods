@@ -14,29 +14,37 @@ In this Assignment, we use the prototype constructor to add new methods to the A
 
 // MAP //
 Array.prototype.myMap = function(callbackFn) {
+    // Loop through the entire array
     for (let i = 0; i < this.length; i++) {
+        // Apply the function to all elements
         this[i] = callbackFn(this[i])
     }
     
+    // Use the current, modified array as our return
     return this
 };
 
 // FILTER //
 Array.prototype.myFilter = function(callbackFn) {
+    // Make a new array to return
     toReturn = []
     
+    // Loop through the entire array
     for (let i = 0; i < this.length; i++) {
+        // If the current element passes the filter,
+        // add it to our return array
         if (callbackFn(this[i])) {
             toReturn.push(this[i])
         }
     }
     
+    // Return the array we were working on
     return toReturn
 };
 
 // SOME //
 Array.prototype.mySome = function(callbackFn) {
-    // Loop through entire array
+    // Loop through the entire array
     for (let i = 0; i < this.length; i++) {
         // Once we find a true item, stop and return true
         if (callbackFn(this[i])) {
