@@ -152,5 +152,18 @@ Object.myKeys = function(object) {
 
 // VALUES //
 Object.myValues = function(object) {
-  // Place your code here.
+    // Get all of the keys of the object using our keys method
+    keys = Object.myKeys(object)
+    
+    // Create an array to store our values
+    values = []
+    
+    // Go through all of the keys of the object
+    for (let i = 0; i < keys.length; i++) {
+        // Add a value from each key to our values array
+        values.push(object[keys[i]])
+    }
+    
+    // Return our array of values
+    return values
 };
