@@ -119,7 +119,20 @@ Array.prototype.myIndexOf = function(searchElement) {
 
 // LASTINDEXOF //
 Array.prototype.myLastIndexOf = function(searchElement) {
-  // Place your code here.
+    // Set a variable to store the (current) last index, which
+    // we set to -1 in case we don't find the element
+    lastIndex = -1
+    
+    // Loop through the entire array
+    for (let i = 0; i < this.length; i++) {
+        // Once we find the item, update the last index
+        if (this[i] == searchElement) {
+            lastIndex = i
+        }
+    }
+    
+    // Return the last index (or -1 if not found)
+    return lastIndex
 };
 
 // KEYS //
@@ -138,9 +151,9 @@ Object.myValues = function(object) {
 
 
 array1 = [2, 9, 10, 5, 9];
-map1 = array1.indexOf(9);
+map1 = array1.lastIndexOf(9);
 console.log(map1);
 
 array2 = [2, 9, 10, 5, 9];
-map2 = array2.myIndexOf(9);
+map2 = array2.myLastIndexOf(9);
 console.log(map2);
