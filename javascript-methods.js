@@ -72,7 +72,21 @@ Array.prototype.myEvery = function(callbackFn) {
 
 // REDUCE //
 Array.prototype.myReduce = function(callbackFn) {
-  // Place your code here.
+    // Set the value of the last result to the first element
+    lastResult = this[0]
+    
+    // Loop through the entire array but skipping the first element
+    // (as we have already set it as the last result)
+    for (let i = 1; i < this.length; i++) {
+        // Set the result to be the reducer function of the last
+        // result and the current element
+        // (in form callbackFn(<callbackFn of previous element>,
+        //          <this element>, <this element's index>)
+        lastResult = callbackFn(lastResult, this[i], i)
+    }
+    
+    // Return the last result we calculated
+    return lastResult
 };
 
 // INCLUDES //
