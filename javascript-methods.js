@@ -23,7 +23,15 @@ Array.prototype.myMap = function(callbackFn) {
 
 // FILTER //
 Array.prototype.myFilter = function(callbackFn) {
-  // Place your code here.
+    toReturn = []
+    
+    for (let i = 0; i < this.length; i++) {
+        if (callbackFn(this[i])) {
+            toReturn.push(this[i])
+        }
+    }
+    
+    return toReturn
 };
 
 // SOME //
